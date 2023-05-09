@@ -59,7 +59,11 @@ async function renderizaCards() {
    }
 
    viraCard() {
-    
+    const cards = document.querySelectorAll('.listCard');
+
+    for (let i = 0; i < cards.length; i++) {
+        
+    }
    }
 }
 
