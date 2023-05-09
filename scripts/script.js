@@ -1,25 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 async function renderizaCards() {
     const lista = document.querySelector('#cardList');
 
