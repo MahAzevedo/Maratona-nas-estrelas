@@ -1,5 +1,5 @@
 async function renderizaCards() {
-    const lista = document.querySelector('#cardList');
+const lista = document.querySelector('#cardList');
 
    lista.innerHTML = ""
 
@@ -14,14 +14,14 @@ async function renderizaCards() {
     const elemento = listaDeDados.results[i]
 
     const li = document.createElement("li")
-    const divFrente = document.createComment("div")
-    const divVerso = document.createComment("div")
-    const divNomeFrente = document.createComment("div")
-    const divNomeVerso = document.createComment("div")
-    const listaDados = document.createComment("ul")
-    const anoNasc = document.createComment("li")
-    const planeta = document.createComment("li")
-    const imagem = document.createComment("img")
+    const divFrente = document.createElement("div")
+    const divVerso = document.createElement("div")
+    const divNomeFrente = document.createElement("div")
+    const divNomeVerso = document.createElement("div")
+    const listaDados = document.createElement("ul")
+    const anoNasc = document.createElement("li")
+    const planeta = document.createElement("li")
+    const imagem = document.createElement("img")
 
     li.classList.add('card', 'listCard')
     divFrente.classList.add("face");
@@ -58,8 +58,9 @@ async function renderizaCards() {
     lista.append(li);
    }
    viraCard();
-
-   viraCard() {
+}
+   
+function viraCard() {
     const cards = document.querySelectorAll('.listCard');
 
     for (let i = 0; i < cards.length; i++) {
@@ -69,7 +70,6 @@ async function renderizaCards() {
             card.classList.toggle('flip');
         });
     }
-   }
 }
 
 renderizaCards();
