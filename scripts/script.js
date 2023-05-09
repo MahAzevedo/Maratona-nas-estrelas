@@ -57,12 +57,17 @@ async function renderizaCards() {
     li.append(divFrente, divVerso);
     lista.append(li);
    }
+   viraCard();
 
    viraCard() {
     const cards = document.querySelectorAll('.listCard');
 
     for (let i = 0; i < cards.length; i++) {
-        
+        const card = cards[i];
+
+        card.addEventListener('click', function() {
+            card.classList.toggle('flip');
+        });
     }
    }
 }
