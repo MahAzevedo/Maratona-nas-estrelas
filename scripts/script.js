@@ -1,44 +1,44 @@
 async function renderizaCards() {
 const lista = document.querySelector('#cardList');
 
-   lista.innerHTML = ""
+   lista.innerHTML = "";
 
    const listaDeDados = await fetch('https://swapi.dev/api/people', {
-    method: "GET"
+    method: "GET";
    })
    .then(function(resposta) {
-    return resposta.json()
+    return resposta.json();
    })
 
    for(let i = 0; i < listaDeDados.results.length; i ++) {
-    const elemento = listaDeDados.results[i]
+    const elemento = listaDeDados.results[i];
 
-    const li = document.createElement("li")
-    const divFrente = document.createElement("div")
-    const divVerso = document.createElement("div")
-    const divNomeFrente = document.createElement("div")
-    const divNomeVerso = document.createElement("div")
-    const listaDados = document.createElement("ul")
-    const anoNasc = document.createElement("li")
-    const planeta = document.createElement("li")
-    const imagem = document.createElement("img")
+    const li = document.createElement("li");
+    const divFrente = document.createElement("div");
+    const divVerso = document.createElement("div");
+    const divNomeFrente = document.createElement("div");
+    const divNomeVerso = document.createElement("div");
+    const listaDados = document.createElement("ul");
+    const anoNasc = document.createElement("li");
+    const planeta = document.createElement("li");
+    const imagem = document.createElement("img");
 
-    li.classList.add('card', 'listCard')
+    li.classList.add('card', 'listCard');
     divFrente.classList.add("face");
     divFrente.classList.add("front");
 
     divNomeFrente.classList.add("titleCard");
-    divNomeFrente.innerText = elemento.name
+    divNomeFrente.innerText = elemento.name;
 
     divNomeVerso.classList.add("titleCard");
-    divNomeVerso.innerText = elemento.name
+    divNomeVerso.innerText = elemento.name;
 
-    listaDados.classList.add("cardData")
+    listaDados.classList.add("cardData");
 
     anoNasc.innerText = 'Ano de Nascimento: ' + elemento.birth_year;
 
     const nomePlaneta = await fetch(elemento.homeworld, { 
-    method: "GET"
+    method: "GET";
     })
     .then(function(resposta) {
         return resposta.json();
@@ -48,8 +48,8 @@ const lista = document.querySelector('#cardList');
 
     divVerso.classList.add('face', 'back');
 
-    imagem.src = "./assets/starduck.png" 
-    imagem.alt = "starduck"
+    imagem.src = "./assets/starduck.png";
+    imagem.alt = "starduck";
 
     listaDados.append(anoNasc, planeta);
     divFrente.append(divNomeFrente, listaDados);
